@@ -14,21 +14,21 @@ export default function Home() {
   return (
     <div
       className="min-h-screen flex flex-col items-center justify-start text-white bg-cover bg-center bg-no-repeat"
-      style={{ backgroundImage: "url('/stadium-bg.jpg')" }}
+      style={{ backgroundImage: "url('/stadium-bg.jpg')", backgroundSize: "150%" }}
     >
       <div className="bg-black bg-opacity-70 w-full max-w-3xl p-6 mt-10 rounded-xl text-center backdrop-blur-sm">
         <Image
           src="/soccer300-logo.jpg"
           alt="Soccer300 Logo"
-          width={220}
-          height={220}
+          width={242} // 10% larger than 220
+          height={242}
           className="mx-auto mb-4 transition-transform duration-700 ease-in-out hover:scale-105"
         />
-        <h1 className="text-4xl sm:text-5xl font-extrabold mb-2">For the Fans, By a Fan</h1>
-        <h2 className="text-lg sm:text-xl text-green-400 mb-6 font-medium">
+        <h1 className="text-4xl sm:text-5xl font-extrabold mb-2 text-white">For the Fans, By a Fan</h1>
+        <h2 className="text-lg sm:text-xl text-white mb-6 font-medium">
           Where strategy meets soccer. Only 300 teams. Free to play. Infinite bragging rights.
         </h2>
-        <p className="mb-6 text-base sm:text-lg">
+        <p className="mb-6 text-base sm:text-lg text-white">
           Soccer300 is fantasy football… with a twist. Built by a fan, for the fans, it’s your exclusive invite to a high-stakes, limited-entry competition fueled by pure soccer fandom. With a <strong>free-to-play</strong> option and only <strong>three hundred teams</strong> allowed, this is your chance to win bragging rights on an international stage. Sign up, show up, and prove you belong.
         </p>
         {submitted ? (
