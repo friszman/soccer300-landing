@@ -14,13 +14,13 @@ export default function Home() {
   return (
     <div
       className="min-h-screen flex flex-col items-center justify-start text-white bg-cover bg-center bg-no-repeat"
-      style={{ backgroundImage: "url('/stadium-bg.jpg')", backgroundSize: "120%" }}
+      style={{ backgroundImage: "url('/stadium-bg.jpg')", backgroundSize: "150%" }}
     >
       <div className="bg-black bg-opacity-70 w-full max-w-3xl p-6 mt-10 rounded-xl text-center backdrop-blur-sm text-white">
         <Image
           src="/soccer300-logo.jpg"
           alt="Soccer300 Logo"
-          width={296} // adjusted width
+          width={316}
           height={266}
           className="mx-auto mb-4 transition-transform duration-700 ease-in-out hover:scale-105"
         />
@@ -41,7 +41,7 @@ export default function Home() {
               onChange={(e) => setEmail(e.target.value)}
               required
               placeholder="Enter your email"
-              className="w-full sm:w-2/3 p-3 rounded border border-gray-300 text-black"
+              className="w-full sm:w-2/3 p-3 rounded border border-gray-300 bg-transparent placeholder-gray-400"
             />
             <button
               type="submit"
