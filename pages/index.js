@@ -1,10 +1,14 @@
 export default function Home() {
   return (
     <div
-      className="w-screen h-screen bg-no-repeat bg-center bg-cover"
+      className="w-screen h-screen bg-no-repeat bg-center bg-cover flex items-center justify-center"
       style={{ backgroundImage: "url('/stadium-bg.jpg')" }}
     >
-      {/* Optional content can go here, centered */}
+      <div className="bg-black bg-opacity-60 px-6 py-4 rounded">
+        <h1 className="text-white text-2xl sm:text-4xl font-bold text-center">
+          Soccer300 is coming soon
+        </h1>
+      </div>
     </div>
   );
 }
