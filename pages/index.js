@@ -8,7 +8,7 @@ export default function Home() {
           src="/stadium-bg.jpg"
           alt="Stadium Background"
           fill
-          className="object-contain"
+          className="object-cover md:object-contain"
           priority
         />
       </div>
