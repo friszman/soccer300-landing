@@ -14,7 +14,7 @@ const HeroSection = () => {
       <p className="text-lg md:text-xl max-w-xl text-gray-700 mb-8">
         Built by a fan for true soccer fans, Soccer300 keeps it simple: 300 fantasy teams,
         all playing for glory. No overcrowded pools, no endless lineups — just pure competition and
-        in-depth discussion about the beautiful game. Free to join, real enough to matter.
+        in-depth discussion about the beautiful game. Free to join, free to play, and real enough to matter.
       </p>
       <form className="w-full max-w-sm">
         <input
