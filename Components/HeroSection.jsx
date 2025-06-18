@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-
+// Trigger redeploy
 export default function HeroSection() {
   const [daysLeft, setDaysLeft] = useState(0);
 
@@ -19,7 +19,7 @@ export default function HeroSection() {
   return (
     <div className="min-h-screen bg-[#225E4F] flex flex-col items-center justify-center text-white px-4 text-center">
       <img
-        src="/Soccer 300 Logo 2.jpg"
+        src="/soccer300-logo.jpg"
         alt="Soccer300 Logo"
         className="w-64 h-auto mb-6 rounded-2xl shadow-lg"
       />
