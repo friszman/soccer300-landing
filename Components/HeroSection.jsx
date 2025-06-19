@@ -83,25 +83,6 @@ export default function HeroSection() {
   />
 </div>
 
-  <div className="flex gap-2 w-full">
-    <input
-      type="text"
-      name="BIRTHDAY[month]"
-      placeholder="MM"
-      pattern="[0-9]*"
-      maxLength="2"
-      className="w-1/2 px-4 py-3 text-[1.05rem] rounded-md text-black border border-black bg-[#B9FFE3] placeholder-gray-600"
-    />
-    <input
-      type="text"
-      name="BIRTHDAY[day]"
-      placeholder="DD"
-      pattern="[0-9]*"
-      maxLength="2"
-      className="w-1/2 px-4 py-3 text-[1.05rem] rounded-md text-black border border-black bg-[#B9FFE3] placeholder-gray-600"
-    />
-  </div>
-
   {/* Bot prevention */}
   <div style={{ position: 'absolute', left: '-5000px' }} aria-hidden="true">
     <input
