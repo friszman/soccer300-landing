@@ -59,18 +59,55 @@ export default function HeroSection() {
   action="https://soccer300.us7.list-manage.com/subscribe/post?u=1aeb9f8ba8310a00079012bba&amp;id=938c818f4f&amp;f_id=00b00ce0f0"
   method="post"
   target="_blank"
-  className="flex flex-col sm:flex-row items-center justify-center gap-y-3 sm:gap-x-4 mb-6"
+  className="flex flex-col gap-4 items-center justify-center mb-6 w-full max-w-xl bg-white p-6 rounded-xl shadow-md border border-black"
 >
+  <h2 className="text-xl font-bold text-[#225E4F] text-center">Join Soccer300</h2>
+
   <input
     type="email"
     name="EMAIL"
-    placeholder="Enter your email"
     required
-    className="w-[13rem] sm:w-[15rem] px-4 py-3 text-[1.05rem] rounded-md text-black border border-black bg-[#B9FFE3] placeholder-gray-600"
+    placeholder="Email Address"
+    className="w-full px-4 py-3 text-[1.05rem] rounded-md text-black border border-black bg-[#B9FFE3] placeholder-gray-600"
   />
-  <div style={{ position: 'absolute', left: '-5000px' }} aria-hidden="true">
-    <input type="text" name="b_1aeb9f8ba8310a00079012bba_938c818f4f" tabIndex="-1" value="" />
+
+  <input
+    type="text"
+    name="FNAME"
+    required
+    placeholder="Username"
+    className="w-full px-4 py-3 text-[1.05rem] rounded-md text-black border border-black bg-[#B9FFE3] placeholder-gray-600"
+  />
+
+  <div className="flex gap-2 w-full">
+    <input
+      type="text"
+      name="BIRTHDAY[month]"
+      placeholder="MM"
+      pattern="[0-9]*"
+      maxLength="2"
+      className="w-1/2 px-4 py-3 text-[1.05rem] rounded-md text-black border border-black bg-[#B9FFE3] placeholder-gray-600"
+    />
+    <input
+      type="text"
+      name="BIRTHDAY[day]"
+      placeholder="DD"
+      pattern="[0-9]*"
+      maxLength="2"
+      className="w-1/2 px-4 py-3 text-[1.05rem] rounded-md text-black border border-black bg-[#B9FFE3] placeholder-gray-600"
+    />
   </div>
+
+  {/* Bot prevention */}
+  <div style={{ position: 'absolute', left: '-5000px' }} aria-hidden="true">
+    <input
+      type="text"
+      name="b_1aeb9f8ba8310a00079012bba_938c818f4f"
+      tabIndex="-1"
+      defaultValue=""
+    />
+  </div>
+
   <button
     type="submit"
     className="px-5 py-3 text-[1.05rem] font-semibold rounded-md bg-white text-[#225E4F] hover:bg-gray-100 transition"
