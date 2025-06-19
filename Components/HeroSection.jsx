@@ -63,21 +63,25 @@ export default function HeroSection() {
 >
   <h2 className="text-xl font-bold text-[#225E4F] text-center">Join Soccer300</h2>
 
-<input
-  type="email"
-  name="EMAIL"
-  required
-  placeholder="Email Address"
-  className="w-[13rem] sm:w-[15rem] px-4 py-3 text-[1.05rem] rounded-md text-black border border-black bg-[#B9FFE3] placeholder-gray-600"
-/>
-
+<div className="flex flex-col sm:flex-row items-center justify-center gap-y-3 sm:gap-x-4 mb-4">
+  {/* Email */}
   <input
-  type="text"
-  name="FNAME"
-  required
-  placeholder="Username"
-  className="w-[13rem] sm:w-[15rem] px-4 py-3 text-[1.05rem] rounded-md text-black border border-black bg-[#B9FFE3] placeholder-gray-600"
-/>
+    type="email"
+    name="EMAIL"
+    required
+    placeholder="Email Address"
+    className="w-[13rem] sm:w-[15rem] px-4 py-3 text-[1.05rem] rounded-md text-black border border-black bg-[#B9FFE3] placeholder-gray-600"
+  />
+
+  {/* Username */}
+  <input
+    type="text"
+    name="FNAME"
+    required
+    placeholder="Create Unique Username"
+    className="w-[13rem] sm:w-[15rem] px-4 py-3 text-[1.05rem] rounded-md text-black border border-black bg-[#B9FFE3] placeholder-gray-600"
+  />
+</div>
 
   <div className="flex gap-2 w-full">
     <input
