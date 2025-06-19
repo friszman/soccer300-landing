@@ -64,10 +64,10 @@ export default function HeroSection() {
   <h2 className="text-xl font-bold text-[#225E4F] text-center">Join Soccer300</h2>
 
 <input
-  type="text"
-  name="FNAME"
+  type="email"
+  name="EMAIL"
   required
-  placeholder="Create your unique username"
+  placeholder="Email Address"
   className="w-[13rem] sm:w-[15rem] px-4 py-3 text-[1.05rem] rounded-md text-black border border-black bg-[#B9FFE3] placeholder-gray-600"
 />
 
