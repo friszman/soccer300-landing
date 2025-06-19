@@ -62,27 +62,30 @@ const [formSubmitted, setFormSubmitted] = useState(false);
 {!formSubmitted ? (
   <form
     noValidate
-    onSubmit={async (e) => {
-      e.preventDefault();
+onSubmit={async (e) => {
+  e.preventDefault();
 
-      const formData = new FormData(e.target);
+  const formData = new FormData(e.target);
 
-      try {
-        await fetch(
-          "https://soccer300.us7.list-manage.com/subscribe/post?u=1aeb9f8ba8310a00079012bba&id=938c818f4f&f_id=00b00ce0f0",
-          {
-            method: "POST",
-            mode: "no-cors",
-            body: formData,
-          }
-        );
-
-        setFormSubmitted(true);
-      } catch (err) {
-        console.error("Submission error:", err);
-        alert("There was a problem. Please try again later.");
+  try {
+    await fetch(
+      "https://soccer300.us7.list-manage.com/subscribe/post?u=1aeb9f8ba8310a00079012bba&id=938c818f4f&f_id=00b00ce0f0",
+      {
+        method: "POST",
+        mode: "no-cors",
+        body: formData,
       }
-    }}
+    );
+
+    // Delay setting formSubmitted so that Mailchimp redirect can be avoided cleanly
+    setTimeout(() => {
+      setFormSubmitted(true);
+    }, 100); // Short delay is enough
+  } catch (err) {
+    console.error("Submission error:", err);
+    alert("There was a problem. Please try again later.");
+  }
+}}
     className="flex flex-col sm:flex-row items-center justify-center gap-y-3 sm:gap-x-4 mb-6"
   >
     <input
