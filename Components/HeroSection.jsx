@@ -5,8 +5,8 @@ const nunito = localFont({ src: '../public/fonts/Nunito/Nunito-VariableFont_wght
 const barlow = localFont({ src: '../public/fonts/Barlow/Barlow-Bold.ttf', weight: '700', display: 'swap' });
 
 export default function HeroSection() {
-  const [daysLeft, setDaysLeft] = useState(0);
-  const [formSubmitted, setFormSubmitted] = useState(false);
+const [daysLeft, setDaysLeft] = useState(0);
+const [formSubmitted, setFormSubmitted] = useState(false);
 
   const handleSubmit = () => {
     setFormSubmitted(true);
@@ -59,12 +59,30 @@ export default function HeroSection() {
 
       {/* Mailchimp Signup Form */}
       <div className="w-full flex justify-center mb-6">
-        {!formSubmitted ? (
+{!formSubmitted ? (
   <form
-    action="https://soccer300.us7.list-manage.com/subscribe/post?u=1aeb9f8ba8310a00079012bba&amp;id=938c818f4f&amp;f_id=00b00ce0f0"
-    method="post"
-    target="_blank"
-    onSubmit={() => setFormSubmitted(true)}
+    noValidate
+    onSubmit={async (e) => {
+      e.preventDefault();
+
+      const formData = new FormData(e.target);
+
+      try {
+        await fetch(
+          "https://soccer300.us7.list-manage.com/subscribe/post?u=1aeb9f8ba8310a00079012bba&id=938c818f4f&f_id=00b00ce0f0",
+          {
+            method: "POST",
+            mode: "no-cors",
+            body: formData,
+          }
+        );
+
+        setFormSubmitted(true);
+      } catch (err) {
+        console.error("Submission error:", err);
+        alert("There was a problem. Please try again later.");
+      }
+    }}
     className="flex flex-col sm:flex-row items-center justify-center gap-y-3 sm:gap-x-4 mb-6"
   >
     <input
@@ -81,8 +99,13 @@ export default function HeroSection() {
       placeholder="Create Unique Username"
       className="w-[13rem] sm:w-[15rem] px-4 py-3 text-[1.05rem] rounded-md text-black border border-black bg-[#B9FFE3] placeholder-gray-600"
     />
-    <div style={{ position: 'absolute', left: '-5000px' }} aria-hidden="true">
-      <input type="text" name="b_1aeb9f8ba8310a00079012bba_938c818f4f" tabIndex="-1" defaultValue="" />
+    <div style={{ position: "absolute", left: "-5000px" }} aria-hidden="true">
+      <input
+        type="text"
+        name="b_1aeb9f8ba8310a00079012bba_938c818f4f"
+        tabIndex="-1"
+        defaultValue=""
+      />
     </div>
     <button
       type="submit"
@@ -95,8 +118,10 @@ export default function HeroSection() {
   <div className="text-center bg-white text-[#225E4F] px-6 py-8 rounded-xl shadow-md max-w-xl mb-6">
     <h2 className="text-2xl font-bold mb-3">Thanks for Signing Up!</h2>
     <p className="text-lg font-semibold">
-      You're officially on the list. We'll be in touch before <strong>August 1</strong>, just in time for kickoff.
-      <br /><br />
+      You're officially on the list. We'll be in touch before{" "}
+      <strong>August 1</strong>, just in time for kickoff.
+      <br />
+      <br />
       Welcome to Soccer300 — where real fans play for real glory.
     </p>
   </div>
