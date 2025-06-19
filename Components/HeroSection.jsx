@@ -57,14 +57,11 @@ const [formSubmitted, setFormSubmitted] = useState(false);
         <strong style={{ fontWeight: '800' }}> Free to join, free to play</strong>, and real enough to matter.
       </p>
 
-      {/* Mailchimp Signup Form */}
-      <div className="w-full flex justify-center mb-6">
-{!formSubmitted ? (
+{/* Mailchimp Signup Form */}
+<div className="w-full flex justify-center mb-6">
   <form
-    action="https://soccer300.us7.list-manage.com/subscribe/post?u=1aeb9f8ba8310a00079012bba&amp;id=938c818f4f&amp;f_id=00b00ce0f0"
+    action="https://soccer300.us7.list-manage.com/subscribe/post?u=1aeb9f8ba8310a00079012bba&id=938c818f4f&f_id=00b00ce0f0&redirect=https://soccer300.com/thank-you"
     method="POST"
-    target="hidden_iframe"
-    onSubmit={() => setFormSubmitted(true)}
     className="flex flex-col sm:flex-row items-center justify-center gap-y-3 sm:gap-x-4 mb-6"
   >
     <input
@@ -95,23 +92,8 @@ const [formSubmitted, setFormSubmitted] = useState(false);
     >
       Notify Me
     </button>
-    {/* Invisible iframe to prevent page redirect */}
-    <iframe
-      name="hidden_iframe"
-      style={{ display: "none" }}
-    ></iframe>
   </form>
-) : (
-  <div className="text-center bg-white text-[#225E4F] px-6 py-8 rounded-xl shadow-md max-w-xl mb-6">
-    <h2 className="text-2xl font-bold mb-3">Thanks for Signing Up!</h2>
-    <p className="text-lg font-semibold">
-      You're officially on the list. We'll be in touch before <strong>August 1</strong>, just in time for kickoff.
-      <br /><br />
-      Welcome to Soccer300 — where real fans play for real glory.
-    </p>
-  </div>
-)}
-      </div>
+</div>
 
       {/* Countdown */}
       <p className="text-sm text-center">Launching in <strong>{daysLeft}</strong> days!</p>
