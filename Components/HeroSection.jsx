@@ -72,12 +72,12 @@ export default function HeroSection() {
 />
 
   <input
-    type="text"
-    name="FNAME"
-    required
-    placeholder="Username"
-    className="w-full px-4 py-3 text-[1.05rem] rounded-md text-black border border-black bg-[#B9FFE3] placeholder-gray-600"
-  />
+  type="text"
+  name="FNAME"
+  required
+  placeholder="Username"
+  className="w-[13rem] sm:w-[15rem] px-4 py-3 text-[1.05rem] rounded-md text-black border border-black bg-[#B9FFE3] placeholder-gray-600"
+/>
 
   <div className="flex gap-2 w-full">
     <input
