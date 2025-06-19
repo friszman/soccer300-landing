@@ -64,7 +64,6 @@ export default function HeroSection() {
           <form
             action="https://soccer300.us7.list-manage.com/subscribe/post?u=1aeb9f8ba8310a00079012bba&amp;id=938c818f4f&amp;f_id=00b00ce0f0"
             method="post"
-            target="_blank"
             onSubmit={handleSubmit}
             className="flex flex-col sm:flex-row items-center justify-center gap-y-3 sm:gap-x-4 mb-6"
           >
