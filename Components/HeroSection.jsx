@@ -57,8 +57,6 @@ export default function HeroSection() {
         <strong style={{ fontWeight: '800' }}> Free to join, free to play</strong>, and real enough to matter.
       </p>
 
-      {/* Mailchimp Signup Form */}
-      <div className="w-full flex justify-center mb-6">
        {/* Email Input + CTA (Mailchimp Enabled) */}
 {/* Mailchimp Signup Form */}
       <div className="w-full flex justify-center mb-6">
