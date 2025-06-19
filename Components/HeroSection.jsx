@@ -59,7 +59,7 @@ export default function HeroSection() {
   action="https://soccer300.us7.list-manage.com/subscribe/post?u=1aeb9f8ba8310a00079012bba&amp;id=938c818f4f&amp;f_id=00b00ce0f0"
   method="post"
   target="_blank"
-  className="flex flex-col gap-4 items-center justify-center mb-6 w-full max-w-xl bg-white p-6 rounded-xl shadow-md border border-black"
+  className="flex flex-col gap-4 items-center justify-center mb-6 w-full max-w-xl bg-transparent p-0 shadow-none border-none"
 >
   <h2 className="text-xl font-bold text-[#225E4F] text-center">Join Soccer300</h2>
 
