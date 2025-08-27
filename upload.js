@@ -1,5 +1,5 @@
 function testUploadToVercel() {
-  const url = 'https://soccer300.com/api/upload';
+  const url = 'https://soccer300.com/api/upload'; // or your .vercel.app test domain
   const sampleBase64Image = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUA' +
                             'AAAFCAYAAACNbyblAAAAHElEQVQI12P4' +
                             '//8/w38GIAXDIBKE0DHxgljNBAAO9TXL0Y4OHwAAAABJRU5ErkJggg==';

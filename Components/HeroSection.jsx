@@ -5,8 +5,8 @@ const nunito = localFont({ src: '../public/fonts/Nunito/Nunito-VariableFont_wght
 const barlow = localFont({ src: '../public/fonts/Barlow/Barlow-Bold.ttf', weight: '700', display: 'swap' });
 
 export default function HeroSection() {
-const [daysLeft, setDaysLeft] = useState(0);
-const [formSubmitted, setFormSubmitted] = useState(false);
+  const [daysLeft, setDaysLeft] = useState(0);
+  const [formSubmitted, setFormSubmitted] = useState(false);
 
   const handleSubmit = () => {
     setFormSubmitted(true);
@@ -16,7 +16,7 @@ const [formSubmitted, setFormSubmitted] = useState(false);
     const targetDate = new Date('2025-08-01T00:00:00');
     const updateCountdown = () => {
       const now = new Date();
-      const diff = targetDate - now;
+      const diff = targetDate.getTime() - now.getTime();
       const days = Math.max(0, Math.floor(diff / (1000 * 60 * 60 * 24)));
       setDaysLeft(days);
     };
@@ -57,46 +57,53 @@ const [formSubmitted, setFormSubmitted] = useState(false);
         <strong style={{ fontWeight: '800' }}> Free to join, free to play</strong>, and real enough to matter.
       </p>
 
-{/* Mailchimp Signup Form */}
-<div className="w-full flex justify-center mb-6">
-  <form
-    action="https://soccer300.us7.list-manage.com/subscribe/post?u=1aeb9f8ba8310a00079012bba&id=938c818f4f&f_id=00b00ce0f0&redirect=https://soccer300.com/thank-you"
-    method="POST"
-    className="flex flex-col sm:flex-row items-center justify-center gap-y-3 sm:gap-x-4 mb-6"
-  >
-    <input
-      type="email"
-      name="EMAIL"
-      required
-      placeholder="Email Address"
-      className="w-[13rem] sm:w-[15rem] px-4 py-3 text-[1.05rem] rounded-md text-black border border-black bg-[#B9FFE3] placeholder-gray-600"
-    />
-    <input
-      type="text"
-      name="FNAME"
-      required
-      placeholder="Create Unique Username"
-      className="w-[13rem] sm:w-[15rem] px-4 py-3 text-[1.05rem] rounded-md text-black border border-black bg-[#B9FFE3] placeholder-gray-600"
-    />
-    <div style={{ position: "absolute", left: "-5000px" }} aria-hidden="true">
-      <input
-        type="text"
-        name="b_1aeb9f8ba8310a00079012bba_938c818f4f"
-        tabIndex="-1"
-        defaultValue=""
-      />
-    </div>
-    <button
-      type="submit"
-      className="px-5 py-3 text-[1.05rem] font-semibold rounded-md bg-white text-[#225E4F] hover:bg-gray-100 transition"
-    >
-      Notify Me
-    </button>
-  </form>
-</div>
+      {/* Mailchimp Signup Form */}
+      <div className="w-full flex justify-center mb-6">
+        <form
+          action="https://soccer300.us7.list-manage.com/subscribe/post?u=1aeb9f8ba8310a00079012bba&id=938c818f4f&f_id=00b00ce0f0&redirect=https://soccer300.com/thank-you"
+          method="POST"
+          className="flex flex-col sm:flex-row items-center justify-center gap-y-3 sm:gap-x-4 mb-6"
+        >
+          <input
+            type="email"
+            name="EMAIL"
+            required
+            placeholder="Email Address"
+            className="w-[13rem] sm:w-[15rem] px-4 py-3 text-[1.05rem] rounded-md text-black border border-black bg-[#B9FFE3] placeholder-gray-600"
+          />
+          <input
+            type="text"
+            name="FNAME"
+            required
+            placeholder="Create Unique Username"
+            className="w-[13rem] sm:w-[15rem] px-4 py-3 text-[1.05rem] rounded-md text-black border border-black bg-[#B9FFE3] placeholder-gray-600"
+          />
+          <div style={{ position: "absolute", left: "-5000px" }} aria-hidden="true">
+            <input
+              type="text"
+              name="b_1aeb9f8ba8310a00079012bba_938c818f4f"
+              tabIndex="-1"
+              defaultValue=""
+            />
+          </div>
+          <button
+            type="submit"
+            className="px-5 py-3 text-[1.05rem] font-semibold rounded-md bg-white text-[#225E4F] hover:bg-gray-100 transition"
+          >
+            Notify Me
+          </button>
+        </form>
+      </div>
 
       {/* Countdown */}
       <p className="text-sm text-center">Launching in <strong>{daysLeft}</strong> days!</p>
+
+   {/* Leaderboard Preview */}
+<img
+  src="/images/leaderboard.png"
+  alt="Leaderboard"
+  className="mt-6 rounded-lg shadow-lg w-full max-w-3xl"
+/>
     </div>
   );
 }
