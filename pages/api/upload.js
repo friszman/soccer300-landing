@@ -2,6 +2,8 @@ import fs from 'fs';
 import path from 'path';
 
 export default async function handler(req, res) {
+  console.log("🔥 Request method:", req.method); // ✅ Add this line
+
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
   }
@@ -12,11 +14,9 @@ export default async function handler(req, res) {
     return res.status(400).json({ error: 'Missing image or name' });
   }
 
-  // Strip the base64 prefix if it exists (e.g. "data:image/png;base64,...")
   const base64Data = image.replace(/^data:image\/\w+;base64,/, '');
   const buffer = Buffer.from(base64Data, 'base64');
 
-  // Write the file to the public/images directory
   const filePath = path.join(process.cwd(), 'public', 'images', name);
 
   try {
