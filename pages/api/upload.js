@@ -1,21 +1,30 @@
-function testUploadToVercel() {
-  const url = 'https://soccer300.com/api/upload';
-  const sampleBase64Image = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUA' +
-                            'AAAFCAYAAACNbyblAAAAHElEQVQI12P4' +
-                            '//8/w38GIAXDIBKE0DHxgljNBAAO9TXL0Y4OHwAAAABJRU5ErkJggg==';
+import fs from 'fs';
+import path from 'path';
 
-  const payload = JSON.stringify({
-    name: `test-${Date.now()}.png`,
-    image: sampleBase64Image
-  });
+export default async function handler(req, res) {
+  if (req.method !== 'POST') {
+    return res.status(405).json({ error: 'Method not allowed' });
+  }
 
-  const options = {
-    method: 'POST',
-    contentType: 'application/json',
-    payload: payload,
-    muteHttpExceptions: true,
-  };
+  const { image, name } = req.body;
 
-  const response = UrlFetchApp.fetch(url, options);
-  Logger.log("Upload response: " + response.getContentText());
+  if (!image || !name) {
+    return res.status(400).json({ error: 'Missing image or name' });
+  }
+
+  // Strip the base64 prefix if it exists (e.g. "data:image/png;base64,...")
+  const base64Data = image.replace(/^data:image\/\w+;base64,/, '');
+  const buffer = Buffer.from(base64Data, 'base64');
+
+  // Write the file to the public/images directory
+  const filePath = path.join(process.cwd(), 'public', 'images', name);
+
+  try {
+    fs.writeFileSync(filePath, buffer);
+    const publicUrl = `https://soccer300.com/images/${name}`;
+    return res.status(200).json({ success: true, url: publicUrl });
+  } catch (err) {
+    console.error('File write error:', err);
+    return res.status(500).json({ error: 'Failed to save image' });
+  }
 }
